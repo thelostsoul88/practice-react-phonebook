@@ -1,9 +1,9 @@
-import { useGetContactsQuery } from 'redux/contacts/contactsApi';
+import { useGetContactsQuery } from '../../redux/contacts/contactsApi';
 
-import { Filter } from 'components/Filter';
-import { ContactsList } from 'components/ContactsList';
-import { Loader } from 'components/Loader';
-import { Title } from 'components/Title';
+import { Filter } from '../Filter/Filter';
+import { ContactsList } from '../ContactsList/ContactsList';
+import { Loader } from '../Loader/Loader';
+import { Title } from '../Title/Title';
 
 export const Contacts = () => {
   const { data: contacts = [], isError, isLoading } = useGetContactsQuery();

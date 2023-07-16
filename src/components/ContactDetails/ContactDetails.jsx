@@ -1,8 +1,8 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useUpdateContactMutation } from 'redux/contacts/contactsApi';
+import { useUpdateContactMutation } from '../../redux/contacts/contactsApi';
 
 import { Box, Paper, Stack, TextField } from '@mui/material';
-import { SecondaryButton } from 'components/SecondaryButton';
+import { SecondaryButton } from '../SecondaryButton/SecondaryButton';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -50,9 +50,9 @@ export const ContactDetails = () => {
     try {
       await updateContact({ savedContact, id });
       toast.success(`Contact ${name} updated.`, {
-          theme: 'colored',
-          autoClose: 2000,
-        });
+        theme: 'colored',
+        autoClose: 2000,
+      });
 
       closePage();
     } catch (error) {

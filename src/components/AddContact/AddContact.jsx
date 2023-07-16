@@ -1,10 +1,10 @@
 import {
   useAddContactMutation,
   useGetContactsQuery,
-} from 'redux/contacts/contactsApi';
+} from '../../redux/contacts/contactsApi';
 
 import { Box, Paper, Stack, TextField } from '@mui/material';
-import { SecondaryButton } from 'components/SecondaryButton';
+import { SecondaryButton } from '../SecondaryButton/SecondaryButton';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,9 +12,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const boxAdd = {
   position: 'absolute',
   top: 80,
-  right: 0,
+  right: 70,
   p: 2,
-  width: 400,
+  width: 300,
   zIndex: 1,
 };
 

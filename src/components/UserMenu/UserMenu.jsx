@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 
-import { useAuth } from 'hooks';
-import { logOut } from 'redux/auth/operations';
+import { useAuth } from '../../hooks/useAuth';
+import { logOut } from '../../redux/auth/operations';
 
 import { Box, Button, Typography } from '@mui/material';
 

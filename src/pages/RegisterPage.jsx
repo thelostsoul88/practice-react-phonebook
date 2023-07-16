@@ -1,15 +1,12 @@
-import {Helmet} from 'react-helmet'
-import { RegisterForm } from 'components/RegisterForm';
+import { RegisterForm } from '../components/RegisterForm/RegisterForm';
 
-const RegisterPage=()=>{
-    return(
-        <main>
-            <Helmet>
-                <title>Registration</title>
-            </Helmet>
-            <RegisterForm/>
-        </main>
-    )
-}
+const RegisterPage = () => {
+  return (
+    <main>
+      <title>Registration</title>
+      <RegisterForm />
+    </main>
+  );
+};
 
-export default RegisterPage
+export default RegisterPage;

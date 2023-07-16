@@ -1,17 +1,13 @@
-import { Helmet } from 'react-helmet';
-import { useAuth } from 'hooks';
-import { InfoText } from 'components/InfoText';
+import { useAuth } from '../hooks/useAuth';
+import { InfoText } from '../components/InfoText/InfoText';
 
 const InfoPage = () => {
   const { isLoggedIn } = useAuth();
 
   return (
     <main>
-      <Helmet>
-        <title>Your Contacts</title>
-      </Helmet>
+      <title>Your Contacts</title>
       {isLoggedIn && <InfoText />}
-
     </main>
   );
 };

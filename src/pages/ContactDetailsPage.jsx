@@ -1,14 +1,9 @@
-import { Helmet } from 'react-helmet';
-import { ContactDetails } from 'components/ContactDetails';
+import { ContactDetails } from '../components/ContactDetails/ContactDetails';
 
 const ContactDetailsPage = () => {
-  
   return (
     <main>
-      <Helmet>
-        <title>Contact</title>
-      </Helmet>
-
+      <title>Contact</title>
       <ContactDetails />
     </main>
   );

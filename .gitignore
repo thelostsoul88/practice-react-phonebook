@@ -3,6 +3,7 @@
 #Junk
 .vscode/
 .idea/
+.swc
 
 # dependencies
 /node_modules

@@ -1,14 +1,11 @@
-import { Helmet } from 'react-helmet';
-import { useAuth } from 'hooks';
-import { Contacts } from 'components/Contacts';
+import { useAuth } from '../hooks/useAuth';
+import { Contacts } from '../components/Contacts/Contacts';
 
 const ContactsPage = () => {
   const { isLoggedIn } = useAuth();
   return (
     <main>
-      <Helmet>
-        <title>Your Contacts</title>
-      </Helmet>
+      <title>Your Contacts</title>
       {isLoggedIn && <Contacts />}
     </main>
   );

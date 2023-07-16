@@ -1,13 +1,12 @@
+import { useDispatch } from 'react-redux';
 import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router';
-
-import { Layout } from 'components/Layout';
-import { useDispatch } from 'react-redux';
-import { refreshUser } from 'redux/auth/operations';
-import { useAuth } from 'hooks';
-import { Loader } from 'components/Loader';
-import { PrivateRoute } from 'components/PrivateRoute';
-import { PublicRoute } from 'components/PubliсRoute';
+import { Layout } from '../Layout/Layout';
+import { refreshUser } from '../../redux/auth/operations';
+import { useAuth } from '../../hooks/useAuth';
+import { Loader } from '../Loader/Loader';
+import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
+import { PublicRoute } from '../PubliсRoute/PublicRoute';
 
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
@@ -72,20 +71,22 @@ export default function App() {
             </PrivateRoute>
           }
         />
-        <Route path="profile" element={
-          <PrivateRoute>
-            <ProfilePage/>
-          </PrivateRoute>
-        }>
-          
-        </Route>
-        <Route path="profile/update" element={
-          <PrivateRoute>
-            <UpdateAvatarPage/>
-          </PrivateRoute>
-        }>
-          
-        </Route>
+        <Route
+          path="profile"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="profile/update"
+          element={
+            <PrivateRoute>
+              <UpdateAvatarPage />
+            </PrivateRoute>
+          }
+        ></Route>
       </Route>
     </Routes>
   );

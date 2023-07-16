@@ -1,4 +1,4 @@
-import { UpdateAvatar } from 'components/UpdateAvatar';
+import { UpdateAvatar } from '../components/UpdateAvatar/UpdateAvatar';
 
 const UpdateAvatarPage = () => {
   return (

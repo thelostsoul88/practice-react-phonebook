@@ -1,8 +1,8 @@
-import { useAuth } from 'hooks';
+import { useAuth } from '../../hooks/useAuth';
 
-import { Navigation } from 'components/Navigation';
-import { AuthNav } from 'components/AuthNav';
-import { UserMenu } from 'components/UserMenu';
+import { Navigation } from '../Navigation/Navigation';
+import { AuthNav } from '../AuthNav/AuthNav';
+import { UserMenu } from '../UserMenu/UserMenu';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import { logIn } from 'redux/auth/operations';
+import { logIn } from '../../redux/auth/operations';
 
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import {
@@ -16,7 +15,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { BasicModal } from 'components/BasicModal';
+import { BasicModal } from '../BasicModal/BasicModal';
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,8 +37,7 @@ export const LoginForm = () => {
   const handleClickShowPassword = () => setShowPassword(show => !show);
 
   return (
-    <BasicModal 
-    >
+    <BasicModal>
       <Box component="form" onSubmit={handleSubmitForm} sx={{ width: '100%' }}>
         <Box
           component="div"

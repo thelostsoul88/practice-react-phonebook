@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import {
   useDeleteContactMutation,
   useGetContactsQuery,
-} from 'redux/contacts/contactsApi';
-
-import { selectFilter } from 'redux/contacts/selectors';
+} from '../../redux/contacts/contactsApi';
+import { selectFilter } from '../../redux/contacts/selectors';
 
 import {
   Table,
@@ -22,7 +21,7 @@ import {
 } from '@mui/material';
 
 import DeleteIcon from '@mui/icons-material/Delete';
-import { ThirdButton } from 'components/SecondaryButton';
+import { ThirdButton } from '../SecondaryButton/SecondaryButton';
 
 const btnDelete = {
   outline: 'none',
@@ -94,7 +93,10 @@ export const ContactsList = () => {
                       >
                         Delete
                       </Button>
-                      <Link to={`${_id}`} state={{ from: { name, number, _id } }}>
+                      <Link
+                        to={`${_id}`}
+                        state={{ from: { name, number, _id } }}
+                      >
                         <ThirdButton>Update</ThirdButton>
                       </Link>
                     </Stack>

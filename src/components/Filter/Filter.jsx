@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectFilter } from 'redux/contacts/selectors';
-import { filter } from 'redux/contacts/contactsSlice';
+import { selectFilter } from '../../redux/contacts/selectors';
+import { filter } from '../../redux/contacts/contactsSlice';
 
 import { Box, Button, Input, InputAdornment, Stack } from '@mui/material';
-import { AddContact } from 'components/AddContact';
+import { AddContact } from '../AddContact/AddContact';
 import { BiSearchAlt } from 'react-icons/bi';
-import { Title } from 'components/Title';
+import { Title } from '../Title/Title';
 
 const btnAdd = {
   outline: 'none',
@@ -39,15 +39,12 @@ export const Filter = () => {
       alignItems="baseline"
       marginTop={4}
     >
-      <Box
-        component="div"
-        position="relative"
-      >
+      <Box component="div" position="relative">
         <Button
           type="button"
           onClick={handleClick}
           variant="outlined"
-          color='secondary'
+          color="secondary"
           sx={btnAdd}
         >
           Add new contact

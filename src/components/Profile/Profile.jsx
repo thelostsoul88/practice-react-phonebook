@@ -8,13 +8,11 @@ import {
   CardActions,
   Button,
 } from '@mui/material';
-import { useAuth } from 'hooks';
+import { useAuth } from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 
 export const Profile = () => {
   const { user } = useAuth();
-
-  console.log('user in Profile 🚀  => ', user);
 
   const avatar = user.avatar.includes('gravatar')
     ? user.avatar
@@ -24,7 +22,8 @@ export const Profile = () => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '20vh',
+        marginTop: '10vh',
+        marginBottom: '10vh',
       }}
     >
       <Card sx={{ maxWidth: 345 }}>

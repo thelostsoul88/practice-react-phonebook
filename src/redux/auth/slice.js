@@ -48,7 +48,6 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(updateAvatar.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.user.avatar = action.payload;
       }),
 });
