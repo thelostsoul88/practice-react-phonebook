@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const contactsApi = createApi({
   reducerPath: 'contactsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:8000',
+    baseUrl: 'https://practice-node-phonebook.onrender.com',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       headers.set('authorization', `Bearer ${token}` ? token : '');
@@ -32,7 +32,7 @@ export const contactsApi = createApi({
       invalidatesTags: ['Contacts'],
     }),
     updateContact: builder.mutation({
-      query: ({savedContact, id}) => ({
+      query: ({ savedContact, id }) => ({
         url: `/contacts/${id}`,
         method: 'PATCH',
         body: savedContact,
@@ -46,5 +46,5 @@ export const {
   useGetContactsQuery,
   useDeleteContactMutation,
   useAddContactMutation,
-  useUpdateContactMutation
+  useUpdateContactMutation,
 } = contactsApi;

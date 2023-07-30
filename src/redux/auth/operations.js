@@ -1,20 +1,16 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://practice-node-phonebook.onrender.com';
 
-//utility to add JWT
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-//utility to remove JWT
 const clearAuthHeader = token => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-//POST - ​/users​/signup (create a new user)
-//body - {"name": "Adrian Cross", "email": "across@mail.com", "password": "12345"}
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
@@ -28,8 +24,6 @@ export const register = createAsyncThunk(
   }
 );
 
-//POST - /users/login (login user)
-//body - {"email": "string", "password": "string"}
 export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
@@ -43,8 +37,6 @@ export const logIn = createAsyncThunk(
   }
 );
 
-//POST - ​/users​/logout (logout user)
-//header - token
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('users/logout');
@@ -54,12 +46,9 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-//GET - /users/current (Get information about the current use)
-////header - token
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    // Reading the token from the state via getState()
     const { token } = thunkAPI.getState().auth;
 
     if (!token) {
